@@ -2,8 +2,6 @@ const weather = require('../assets/weather.json');
 const superagent = require('superagent');
 require('dotenv').config();
 
-const WEATHER_BIT_KEY = process.env.WEATHER_BIT_KEY;
-
 class Weather{
     constructor(data){
       this.date = data.valid_date;
@@ -12,7 +10,7 @@ class Weather{
 }
 
 
-const getweatherData = (req, res) => {
+const getweatherData = ('/weather', (req, res) => {
   
     try {
       console.log(req.query);
@@ -29,6 +27,6 @@ const getweatherData = (req, res) => {
     }
     
     
-  };
+  });
 
   module.exports = getweatherData;
